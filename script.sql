@@ -21,11 +21,11 @@ create table departement
 
 create table commune
 (
-    code_commune     varchar(5)    not null
+    code_commune     varchar(6)    not null
         primary key,
     code_departement varchar(3)    not null,
     nom_commune      varchar(50)   not null,
-    code_postal      varchar(5)    not null,
+    code_postal      varchar(5)    null,
     latitude         decimal(9, 6) null,
     longitude        decimal(9, 6) null,
     constraint commune_pk
@@ -56,7 +56,7 @@ create table adresse
 (
     id_adresse     bigint auto_increment
         primary key,
-    code_commune   varchar(5)  not null,
+    code_commune   varchar(6)  not null,
     code_type_voie bigint      not null,
     numero_voie    bigint      not null,
     nom_voie       varchar(50) not null,
@@ -71,16 +71,16 @@ create table adresse
 
 create table bien
 (
-    id_bien           bigint auto_increment
+    id_bien             bigint auto_increment
         primary key,
-    id_adresse        bigint         not null,
-    code_type_local   bigint         not null,
-    nombre_lot        bigint         not null,
-    surface_reel_bati decimal(7, 2)  not null,
-    nombre_pieces     bigint         not null,
-    section           varchar(5)     not null,
-    numero_plan       bigint         null,
-    surface_carre     decimal(12, 2) null,
+    id_adresse          bigint         not null,
+    code_type_local     bigint         not null,
+    nombre_lots         bigint         not null,
+    surface_reelle_bati decimal(7, 2)  not null,
+    nombre_pieces       bigint         not null,
+    section             varchar(5)     null,
+    numero_plan         bigint         null,
+    surface_carre       decimal(12, 2) null,
     constraint bien_pk_2
         unique (id_bien),
     constraint bien_adresse_id_adresse_fk
@@ -95,12 +95,11 @@ create table transaction
         primary key,
     id_bien         bigint         not null,
     date_mutation   date           not null,
-    valeur_fonciere decimal(15, 2) not null,
+    valeur_fonciere decimal(15, 2) null,
     nom_acquereur   varchar(50)    not null,
     constraint transaction_pk_2
         unique (id_transaction),
     constraint transaction_bien_id_bien_fk
         foreign key (id_bien) references bien (id_bien)
 );
-
 
