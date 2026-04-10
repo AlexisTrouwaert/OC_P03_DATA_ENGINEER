@@ -1,0 +1,10 @@
+;;;;
+;;;;
+Dictionnaire des données ;Significations;;;
+CODE;Nom de la ligne dans le fichier Initial;;;
+SIGNIFICATION;Signification de la colonne;;;
+TYPE DE VARIABLES;Varchar, Integer, Date, Float, etc.;;;
+LONGUEUR;Longueur maximale de la donnée (pas obligatoire);;;
+NATURE (E/Ca/CO);Elémentaire, calculé ou concaténé;;;
+REGLE DE GESTION;Format de la date (jj/mm/aaaa, jj/mm/aa, etc), ne doit pas être nul, etc.;;;
+REGLE DE CALCUL;exemple : Colonne A + Colonne B ;;;

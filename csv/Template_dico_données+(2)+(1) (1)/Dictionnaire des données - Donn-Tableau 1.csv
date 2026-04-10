@@ -1,0 +1,9 @@
+;;;;;;;
+DICTIONNAIRE DES DONNÉES - Données communes;;;;;;;
+;;;;;;;
+;;;;;;;
+CODE;SIGNIFICATION;TYPE;LONGUEUR;NATURE;REGLE DE GESTION;REGLE DE CALCUL;
+Id;Code de la commune;VARCHAR(5);5;Elémentaire;Doit être unique et non null;;
+Commune;Nom de la commune;VARCHAR(100);100;Elémentaire;Ne doit pas être nul;;
+code_region;Code faisant référence à la région;VARCHAR(2);2;Elémentaire;Ne doit pas être nul;;
+code_departement;Code faisant référence au département;VARCHAR(3);3;Elémentaire;Ne doit pas être nul;;
